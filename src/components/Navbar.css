@@ -1,0 +1,15 @@
+.navbar{
+  display: flex;
+  padding: 1rem;
+}
+
+.main-heading{
+  font-size: 2rem;
+}
+
+.nav-list{
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  width: 20rem;
+}

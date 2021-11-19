@@ -1,0 +1,14 @@
+.recipe-card {
+  margin: 0 auto;
+  width: 16rem;
+  overflow: hidden;
+}
+
+.recipe-img{
+  width: 100%;
+  transition: .6s ease-in-out;
+}
+
+.recipe-img:hover{
+  transform: scale(1.1);
+}
