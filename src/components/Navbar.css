@@ -1,15 +1,29 @@
 .navbar{
+  top: 0;
+  left: 0;
   display: flex;
-  padding: 1rem;
-}
-
-.main-heading{
-  font-size: 2rem;
+  padding: 2rem 1rem;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  background-color: var(--navy);
+  margin-bottom: 1rem;
 }
 
 .nav-list{
   display: flex;
-  justify-content: space-evenly;
   list-style: none;
-  width: 20rem;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 25%;
+  height: 2.5rem;
+}
+
+.nav-item a{
+  text-decoration: none;
+  color: var(--white);
+}
+
+.main-heading{
+  color: var(--white);
+  font-size: 2rem;
 }

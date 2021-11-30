@@ -1,4 +1,4 @@
-import React, {useState, useEffect, Fragment } from 'react';
+import React, {useState, useEffect } from 'react';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import axios from 'axios';
 import About from './components/About';
@@ -11,6 +11,7 @@ import './App.css';
 
 function App() {
   const [recipes, setRecipes] = useState([]);
+  const [recipe, setRecipe] = useState([]);
 
   useEffect(() => {
     const fetchRecipes = async() => {
@@ -28,28 +29,37 @@ function App() {
     getRecipes();
   }
 
-  const getSingleRecipe = (id) => {
-    console.log(id);
-  }
+  const getRecipe = async (id) => {
+    const results = await axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${process.env.REACT_APP_API_KEY}&includeNutrition=false`)
+    //setRecipe(results);
+    setRecipe(results.data);
+    console.log(results.data);
+    }
 
   return (
     <Router>
         <Navbar />
-        <div className="main-container">
         <Routes>
           <Route exact path='/' element={
               <About />
           }/>
           <Route exact path='/Recipes' element={
-            <div className="main-content">
+            <div className="content-container">
                 <Search searchRecipes={searchRecipes}/>
                 <Recipes recipes={recipes} />
             </div>
           } />
-           <Route exact path='/SingleRecipe' element={<SingleRecipe/>} />
+        <Route 
+            exact path='/SingleRecipe/:id' 
+            element={
+              <SingleRecipe 
+                getRecipe={getRecipe} 
+                recipe={recipe}
+              />
+              }
+          />
         </Routes>
-        <Footer />
-      </div>
+      <Footer />
     </Router>
   );
 }
