@@ -1,17 +1,41 @@
-.main-container{
+:root {
+  --pink: #ee2560;
+  --navy: #08182b;
+  --white: #f4f4f4;
+  --green: #45d9fd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.content-container{
   display: grid;
   grid-template-columns: 12fr;
+  box-sizing: border-box;
 }
 
-@media screen and (min-width: 850px ) {
-  .main-container{
+@media screen and (min-width: 700px) {
+  .content-container{
+    grid-template-columns: 5fr 7fr;
+  }  
+}
+
+@media screen and (min-width: 900px) {
+  .content-container{
+    grid-template-columns: 4fr 8fr;
+  }  
+}
+
+@media screen and (min-width: 1200px) {
+  .content-container{
     grid-template-columns: 3fr 9fr;
-  }
+  }  
 }
 
-@media screen and (min-width: 1400px ) {
-  .main-container{
+@media screen and (min-width: 1400px) {
+  .content-container{
     grid-template-columns: 2fr 10fr;
-  }
+  }  
 }
-

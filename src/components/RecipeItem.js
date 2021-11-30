@@ -6,17 +6,15 @@ import './RecipeItem.css'
 
 const RecipeItem = ({recipe: {image, title, id}}) => {
 
-  // const handleClick = e => {
-  //   getSingleRecipe(id);
-  // }
-
   return (
-    <div className="recipe-card">
     <Link to={`/SingleRecipe/${id}`}>
+    <div className="recipe-card">
+    <div className="img-container">
       <img src={image} alt={title} className="recipe-img" />
-      <h4>{title}</h4>
-    </Link>
     </div>
+      <h4 className="recipe-title">{title}</h4>
+    </div>
+    </Link>
   )
 }
 RecipeItem.propTypes= {

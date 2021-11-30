@@ -1,14 +1,21 @@
-.recipe-card {
-  margin: 0 auto;
-  width: 16rem;
-  overflow: hidden;
+.recipe-card{
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--pink);
 }
 
 .recipe-img{
   width: 100%;
-  transition: .6s ease-in-out;
 }
 
-.recipe-img:hover{
-  transform: scale(1.1);
+.recipe-container a{
+  text-decoration: none;
+}
+
+.recipe-title{
+  color: var(--navy);
+  font-variant: small-caps;
+  padding: 2rem;
 }
