@@ -26,32 +26,39 @@ const SingleRecipe = ({getRecipe, recipe}) => {
 
   return (
     <div className="single-container">
-    <div className="single-info">
-        <h3 className="recipe-title">{title}</h3>
-          <a href={sourceUrl}>{sourceName}</a>
-              <span className="info servings">{servings}</span>
-              <span className="info ready-time">{readyInMinutes}</span>
-            <img src={image} alt={title}  className="single-img" />
-     </div>
+      <div className="single-header">
+        <div className="single-info">
+            <h3 className="sr-title">{title}</h3>
+            <p className="acknowledge">
+              &copy; <a href={sourceUrl}>{sourceName}</a>
+            </p>
+            <span className="info servings">Serves: {servings}</span>
+            <span className="info ready-time">Ready In: {readyInMinutes} minutes</span>
+          </div>
+          <div className="single-img">
+            <img src={image} alt={title}  className="sr-img" />
+          </div>
+      </div>
       <div className="recipe-details">
-          <h4>Ingredients</h4>
-          <ul>
-             {/* {extendedIngredients.map(ingredient => (
-              <li>{ingredient.original}</li>
-          ))} */}
-          {extendedIngredients.map(ingredient => (
-              <li>{ingredient.original}</li>
-            ))}
-          </ul> 
-          <h4>Instructions</h4>
-          <p>       
-            {instructions
+        <div className="ingredients">
+            <h4>Ingredients</h4>
+            <ul>
+              {extendedIngredients && extendedIngredients.map(ingredient => (
+                <li>{ingredient.original}</li>
+              ))}
+            </ul> 
+          </div>
+          <div className="instructions">
+            <h4>Instructions</h4>
+            <p className="instruction-paragraph">       
+              {instructions && instructions
+              .replaceAll('<li>', '')
+              .replaceAll('</li>', '')
               .replace('<ol>', '')
               .replace('</ol>', '')
-              .replaceAll('<li>', ' ')
-              .replace('</li>', '  ')
-            }
-          </p>
+              }
+            </p>
+          </div>
         </div>
     </div>
   )
