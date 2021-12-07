@@ -9,10 +9,12 @@ const RecipeItem = ({recipe: {image, title, id}}) => {
   return (
     <Link to={`/SingleRecipe/${id}`}>
     <div className="recipe-card">
-    <div className="img-container">
-      <img src={image} alt={title} className="recipe-img" />
-    </div>
-      <h4 className="recipe-title">{title}</h4>
+      <div className="img-container">
+        <img src={image} alt={title} className="recipe-img" />
+      </div>
+      <div className="title-container">
+        <h4 className="recipe-title">{title}</h4>
+      </div>
     </div>
     </Link>
   )
