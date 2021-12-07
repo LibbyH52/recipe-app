@@ -1,0 +1,63 @@
+.single-container{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.single-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.info{
+  padding-right: 1rem;
+  padding-top: 1rem;
+  font-variant: small-caps;
+}
+
+.sr-title{
+  font-variant: small-caps;
+  color: var(--navy);
+  font-size: 1.75rem;
+}
+
+.sr-img{
+  height: 20rem;
+  width: auto;
+  margin-left: auto;
+}
+
+.recipe-details{
+  grid-row: 5/12;
+  display: flex;
+  justify-content: space-evenly;
+  color: var(--navy);
+}
+
+.ingredients{
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  list-style: none;
+  flex: 0 0 45%;
+  align-items: center;
+}
+
+.ingredients>ul{
+  list-style: none;
+}
+
+.ingredients>ul>li{
+  padding: .25rem;
+}
+
+.instructions{
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 45%;
+  align-items: center;
+  padding: .5rem 1rem;
+  letter-spacing: 1px;
+  word-spacing: 4px;
+}
