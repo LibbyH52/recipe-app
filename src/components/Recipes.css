@@ -2,6 +2,8 @@
   display: grid;
   grid-template-columns: 12fr;
   grid-gap: 1rem;
+  box-sizing: border-box;
+  padding: 1rem;
 }
 
 @media screen and (min-width: 700px) {
@@ -13,12 +15,14 @@
 
 @media screen and (min-width: 1000px) {
   .recipe-container{
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
   }
 }
 
 @media screen and (min-width: 1400px) {
   .recipe-container{
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
   }
 }
