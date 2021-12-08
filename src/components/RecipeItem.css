@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Gwendolyn:wght@400;700&family=Lobster&display=swap');
+
 a .recipe-card{
   width: 15rem;
   height: 18rem;
@@ -44,6 +46,16 @@ a {
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   display: inline-block;
+}
+
+.missing-img {
+  font-family: 'Lobster', cursive;
+  text-shadow: 1px 1px 2px var(--green);
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 4rem;
+  text-align: center;
+  color: var(--navy);
 }
 
 .title-container{
