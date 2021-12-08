@@ -55,7 +55,7 @@ a {
   font-size: 2.5rem;
   line-height: 4rem;
   text-align: center;
-  color: var(--navy);
+  color: rgba(8, 24, 43, .4);
 }
 
 .title-container{
