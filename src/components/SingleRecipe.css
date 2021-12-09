@@ -1,8 +1,10 @@
 .single-container{
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
+  padding: 2rem;
+  margin-bottom: 2rem;
 }
 
 .single-header{
@@ -23,13 +25,14 @@
 }
 
 .sr-img{
+  box-shadow: 2px 2px 2px 1px #888;
   height: 20rem;
-  width: auto;
+  width: 25rem;
   margin-left: auto;
 }
 
 .recipe-details{
-  grid-row: 5/12;
+  grid-row: 5/-1;
   display: flex;
   justify-content: space-evenly;
   color: var(--navy);
@@ -40,7 +43,7 @@
   flex-direction: column;
   box-sizing: border-box;
   list-style: none;
-  flex: 0 0 45%;
+  flex: 0 0 40%;
   align-items: center;
 }
 
@@ -55,9 +58,34 @@
 .instructions{
   display: flex;
   flex-direction: column;
-  flex: 0 0 45%;
+  flex: 0 0 50%;
   align-items: center;
-  padding: .5rem 1rem;
+  padding: .5rem .25rem;
   letter-spacing: 1px;
   word-spacing: 4px;
+}
+
+@media screen and (min-width: 1000px) {
+  .single-container{
+    width: 80%;
+    box-shadow: 2px 2px 2px 2px rgb(175,175,175);
+  }
+}
+
+@media screen and (min-width: 1200px){
+  .single-container{
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .single-container{
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .single-container{
+    width: 50%;
+  }
 }
