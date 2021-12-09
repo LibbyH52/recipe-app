@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import './RecipeItem.css'
 
-const RecipeItem = ({recipe: {image, title, id}}) => {
+const RecipeItem = ({recipe: {image, title, id, readyInMinutes}, clock}) => {
 
   return (
     <Link to={`/SingleRecipe/${id}`}>
@@ -17,6 +17,12 @@ const RecipeItem = ({recipe: {image, title, id}}) => {
       </div>
       <div className="title-container">
         <h4 className="recipe-title">{title}</h4>
+        <p className="ready-time">
+          <span className="icon">
+              <i className={clock} />
+          </span>
+           {readyInMinutes} minutes
+        </p>
       </div>
     </div>
     </Link>
@@ -25,5 +31,11 @@ const RecipeItem = ({recipe: {image, title, id}}) => {
 RecipeItem.propTypes= {
   //RecipeItem being passed in is an object
   recipe: PropTypes.object.isRequired,
+  clock: PropTypes.string.isRequired
 }
+
+RecipeItem.defaultProps = {
+  clock: 'far fa-clock'
+}
+
 export default RecipeItem;

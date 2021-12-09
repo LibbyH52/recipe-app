@@ -17,13 +17,8 @@
   padding-bottom: 2rem;
 }
 
-@media screen and (min-width: 700px) {
-  .content-container{
-    grid-template-columns: 5fr 7fr;
-  }  
-}
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1000px) {
   .content-container{
     grid-template-columns: 4fr 8fr;
   }  
@@ -37,6 +32,12 @@
 
 @media screen and (min-width: 1400px) {
   .content-container{
-    grid-template-columns: 2fr 10fr;
+    grid-template-columns: 4fr 8fr;
+  }  
+}
+
+@media screen and (min-width: 1600px) {
+  .content-container{
+    grid-template-columns: 3fr 9fr;
   }  
 }
