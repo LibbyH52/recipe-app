@@ -14,6 +14,7 @@
   display: grid;
   grid-template-columns: 12fr;
   box-sizing: border-box;
+  padding-bottom: 2rem;
 }
 
 @media screen and (min-width: 700px) {
