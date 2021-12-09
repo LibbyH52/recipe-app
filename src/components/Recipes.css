@@ -13,14 +13,14 @@
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1200px) {
   .recipe-container{
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1500px) {
   .recipe-container{
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
