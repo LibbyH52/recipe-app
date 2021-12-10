@@ -16,32 +16,36 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchRecipes = async() => {
+    const fetchRecipes = async() => { 
       const results = await axios.get(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&limitLicense=true&maxReadyTime=59&number=12&sortDirection='desc'`);
       setRecipes(results.data.recipes);
       setIsLoading(false);
+      console.log(results.data.recipes);
     }
     fetchRecipes();
   }, [])
 
   const searchRecipes = (recipeName) => {
     const getRecipes = async() => {
-    const results = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${recipeName}&limitLicence=true&maxReadyTime=59&number=12`)
-    setRecipes(results.data.results);
+      const results = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${recipeName}&limitLicence=true&maxReadyTime=59&number=12`)
+      setRecipes(results.data.results);
+      setIsLoading(false);
     }
     getRecipes();
   }
 
   const getRecipe = async (id) => {
     const results = await axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${process.env.REACT_APP_API_KEY}&includeNutrition=false`)
-    //setRecipe(results);
     setRecipe(results.data);
+    setIsLoading(false);
+    console.log(results.data);
     }
 
   return (
     <RecipeState>
       <Router>
           <Navbar />
+          <div className="main-container">
           <Routes>
             <Route exact path='/' element={
                 <About />
@@ -63,6 +67,7 @@ function App() {
                 }
             />
           </Routes>
+          </div>
         <Footer />
       </Router>
     </RecipeState>

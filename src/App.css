@@ -10,11 +10,27 @@
   padding: 0;
 }
 
+body{
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 10rem;
+  box-sizing: border-box;
+}
+
 .content-container{
   display: grid;
   grid-template-columns: 12fr;
   box-sizing: border-box;
   padding-bottom: 2rem;
+  padding-top: 1rem;
 }
 
 
