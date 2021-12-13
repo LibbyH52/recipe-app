@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import './RecipeItem.css'
 
-const RecipeItem = ({recipe: {image, title, id, readyInMinutes}, clock}) => {
+const RecipeItem = ({recipe: {id, image, title, readyInMinutes}, clock}) => {
 
   return (
     <Link to={`/SingleRecipe/${id}`}>

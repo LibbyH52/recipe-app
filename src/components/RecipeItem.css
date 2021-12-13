@@ -15,12 +15,12 @@ a .recipe-card{
   padding: .5rem;
 }
 
-.recipe-card:hover{
-  box-shadow: 2px 2px 3px rgba(238, 37, 96, .3);
+.recipe-card:hover .recipe-img{
+  transform: scale(1.25);
 }
 
-.recipe-card:hover .recipe-img{
-  transform: scale(2);
+.recipe-card:hover{
+  box-shadow: 2px 2px 3px rgba(238, 37, 96, .3);
 }
 
 a {
