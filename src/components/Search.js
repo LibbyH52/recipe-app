@@ -29,7 +29,7 @@ const Search = ({find, searchRecipes}) => {
         <button type="submit" 
           className="btn btn-search">
           <span className="icon">
-            <i className={find} />
+            Search <i className={find} />
           </span>
         </button>
       </form>

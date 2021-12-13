@@ -1,0 +1,36 @@
+.search-container{
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
+
+.form{
+  width: 90%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.search{
+  width: 90%;
+  line-height: 1.5rem;
+  border-radius: .5rem;
+  padding: .5rem;
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: block;
+}
+
+.btn-search{
+  background: var(--pink);
+  border: 1px solid var(--pink);
+  display: block;
+  height: 2.5rem;
+  width: 90%;
+  margin: 1rem auto;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  color: var(--white);
+}
+
+
