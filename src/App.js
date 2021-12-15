@@ -20,7 +20,6 @@ function App() {
       const results = await axios.get(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&limitLicense=true&maxReadyTime=59&number=12&sortDirection='desc'`);
       setRecipes(results.data.recipes);
       setIsLoading(false);
-      console.log(results.data.recipes);
     }
     fetchRecipes();
   }, [])
