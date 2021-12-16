@@ -23,20 +23,10 @@
   text-align: center;
 }
 
-@media screen and (min-width: 420px){
-  .about-container{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
-
 @media screen and (min-width: 550px){
   .about-container{
     border: 1rem groove var(--navy);
     width: 80%;
-    position: absolute;
   }
 
   .tag-line{

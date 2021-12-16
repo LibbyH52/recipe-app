@@ -21,8 +21,11 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: 10rem;
+  padding-bottom: 5rem;
   box-sizing: border-box;
+  position: relative;
+  min-height: 80vh;
+  max-height: 100%;
 }
 
 .content-container{
