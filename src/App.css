@@ -21,7 +21,8 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: 5rem;
+  align-items:center;
+  padding-bottom: 10rem;
   box-sizing: border-box;
   position: relative;
   min-height: 80vh;
