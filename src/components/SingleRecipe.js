@@ -1,9 +1,11 @@
 import React, {useEffect} from 'react';
-import {useParams} from 'react-router-dom';
+import {useParams, useNavigate} from 'react-router-dom';
 import './SingleRecipe.css'
 
 const SingleRecipe = ({getRecipe, recipe}) => {
   const params = useParams();
+  const goBack=useNavigate();
+  console.log(goBack)
 
   useEffect(() => {
         getRecipe(params.id)
@@ -26,6 +28,7 @@ const SingleRecipe = ({getRecipe, recipe}) => {
 
   return (
     <div className="single-container">
+    <button className="btn-back" onClick={() => goBack('/recipes')}>Back to Search</button>
       <div className="single-header">
         <div className="single-info">
             <h3 className="sr-title">{title}</h3>
@@ -44,7 +47,7 @@ const SingleRecipe = ({getRecipe, recipe}) => {
             <h4>Ingredients</h4>
             <ul>
               {extendedIngredients && extendedIngredients.map(ingredient => (
-                <li>{ingredient.original}</li>
+                <li key={ingredient.id}>{ingredient.original}</li>
               ))}
             </ul> 
           </div>

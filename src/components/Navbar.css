@@ -6,6 +6,7 @@
   justify-content: space-evenly;
   box-sizing: border-box;
   background-color: var(--navy);
+  position: relative;
 }
 
 .nav-list{
@@ -23,22 +24,31 @@
   font-weight: bold;
   font-size: 1.25rem;
   font-variant: small-caps;
-  transition: all .4s ease-in-out;
+  transition: all .5s ease-in-out;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
 }
 
-.nav-item a:hover,
-.nav-item a:focus{
-  font-size: 1.5rem;
+.nav-item a:hover{
+  transform: scale(1.1);
+  background: var(--white);
+  color: var(--navy);
 }
 
-.main-heading{
+.main-heading a,
+.main-heading a:active{
   color: var(--white);
   font-size: 2rem;
   transition: all .5s ease-in-out;
-  position: relative;
+  box-sizing: border-box;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
 }
 
-.main-heading:hover{
-  transform: skew(5deg);
-  letter-spacing: 2px;
+.main-heading a:hover{
+  transform: scale(1.1);
+  background: var(--white);
+  color: var(--navy);
 }
