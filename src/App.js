@@ -37,7 +37,6 @@ function App() {
     const results = await axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${process.env.REACT_APP_API_KEY}&includeNutrition=false`)
     setRecipe(results.data);
     setIsLoading(false);
-    console.log(results.data);
     }
 
   return (
