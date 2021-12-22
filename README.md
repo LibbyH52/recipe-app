@@ -72,7 +72,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ## Credits
 ### Content
+This app was built for educational pruposes only and is not intended for commercial use. All 
+
 ### Media
 
 
 ### Acknowledgements
+This project was built with the help of the following [tutorial](https://www.udemy.com/course/modern-react-front-to-back/)
+Information on how to use useNavigate() was found [here](https://dev.to/salehmubashar/usenavigate-tutorial-react-js-aop) and [here](https://www.youtube.com/watch?v=QgpJHN_EOGM)
