@@ -5,7 +5,11 @@ import PropTypes from 'prop-types'
 import './RecipeItem.css'
 
 const RecipeItem = ({recipe: {id, image, title, readyInMinutes}, clock}) => {
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 504d1b8a8825d8daa1cdd32081f6bf2acb3f3a10
   return (
     <Link to={`/SingleRecipe/${id}`}>
     <div className="recipe-card">
@@ -21,8 +25,12 @@ const RecipeItem = ({recipe: {id, image, title, readyInMinutes}, clock}) => {
           <span className="icon">
               <i className={clock} />
           </span>
+<<<<<<< HEAD
            {readyInMinutes ? `${readyInMinutes} minutes` :
            <span>less than 1 hour</span>}
+=======
+           {readyInMinutes} minutes
+>>>>>>> 504d1b8a8825d8daa1cdd32081f6bf2acb3f3a10
         </p>
       </div>
     </div>

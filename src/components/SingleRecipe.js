@@ -5,7 +5,7 @@ import './SingleRecipe.css'
 const SingleRecipe = ({getRecipe, recipe}) => {
   const params = useParams();
   const goBack=useNavigate();
-  console.log(goBack)
+
 
   useEffect(() => {
         getRecipe(params.id)

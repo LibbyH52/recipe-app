@@ -23,10 +23,26 @@
   text-align: center;
 }
 
+<<<<<<< HEAD
+=======
+@media screen and (min-width: 420px){
+  .about-container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+>>>>>>> 504d1b8a8825d8daa1cdd32081f6bf2acb3f3a10
 @media screen and (min-width: 550px){
   .about-container{
     border: 1rem groove var(--navy);
     width: 80%;
+<<<<<<< HEAD
+=======
+    position: absolute;
+>>>>>>> 504d1b8a8825d8daa1cdd32081f6bf2acb3f3a10
   }
 
   .tag-line{
