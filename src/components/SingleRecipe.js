@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, Fragment} from 'react';
 import {useParams, useNavigate} from 'react-router-dom';
 import './SingleRecipe.css'
 
@@ -27,8 +27,9 @@ const SingleRecipe = ({getRecipe, recipe}) => {
 
 
   return (
-    <div className="single-container">
+    <Fragment>
     <button className="btn-back" onClick={() => goBack('/recipes')}>Back to Search</button>
+    <div className="single-container">
       <div className="single-header">
         <div className="single-info">
             <h3 className="sr-title">{title}</h3>
@@ -64,6 +65,7 @@ const SingleRecipe = ({getRecipe, recipe}) => {
           </div>
         </div>
     </div>
+    </Fragment>
   )
 }
 export default SingleRecipe;
