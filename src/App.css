@@ -27,6 +27,7 @@ body{
   position: relative;
   min-height: 80vh;
   max-height: 100%;
+  margin-bottom: 2rem;
 }
 
 .content-container{
