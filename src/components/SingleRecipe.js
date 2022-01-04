@@ -17,7 +17,6 @@ const SingleRecipe = ({getRecipe, recipe}) => {
         image,
         extendedIngredients,
         instructions,
-        dishTypes,
         sourceUrl,
         sourceName,
         readyInMinutes,
@@ -26,7 +25,17 @@ const SingleRecipe = ({getRecipe, recipe}) => {
         nutrition
       } = recipe;
      
-      console.log(recipe);
+      let nutrients = nutrition.nutrients;
+      const nutArr = [];
+
+      for(let i=0; i<nutrients.length; i++){
+        if(nutrients[i].name === 'Calories' || nutrients[i].name === 'Fat' ||
+          nutrients[i].name === 'Carbohydrates' || nutrients[i].name === 'Protein' ||
+          nutrients[i].name === 'Fiber' || nutrients[i].name === 'Sugar' ||
+          nutrients[i].name === 'Sodium' ) {
+              nutArr.push(nutrients[i])
+          }
+      }
 
 
   return (
@@ -45,12 +54,13 @@ const SingleRecipe = ({getRecipe, recipe}) => {
                 <span className="ready-time">Ready In: {readyInMinutes} minutes</span>
             </div>
             <div className="nutrition">
-            {nutrition && nutrition.nutrients.map(nutrient => (
-              <span className="nutritional-info">
-                <span className='nutrient-name'>{nutrient.name}</span>
-                <span className='nutrient-amount'>{nutrient.amount}</span>
-                <span className='nutrient-unit'>{nutrient.unit}</span>
-              </span>
+            {nutrition && nutArr.map(nutrient => (
+              <div className="nutritional-info">
+                {nutrient.name ==="Carbohydrates" ? 
+                <span className='nutrient nutrient-name'>Carbs</span>
+                  : <span className='nutrient nutrient-name'>{nutrient.name}</span>}
+                <span className='nutrient nutrient-amount'>{nutrient.amount}{nutrient.unit}</span>
+              </div>
             ))}
             </div>
           </div>
