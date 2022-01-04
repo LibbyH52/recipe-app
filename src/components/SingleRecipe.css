@@ -47,6 +47,31 @@
   font-size: 1.75rem;
 }
 
+.nutrition{
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 1rem;
+  background: rgba(69, 217, 253, .5);
+  border: 2px solid var(--navy);
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.nutritional-info{
+  display: flex;
+  border-bottom: 2px solid var(--navy);
+  padding: .5rem;
+}
+
+.nutrient{
+  display: flex;
+}
+
+.nutrient-name {
+  flex: 0 0 50%;
+}
+
 .sr-img{
   box-shadow: 2px 2px 2px 1px #888;
   height: auto;
@@ -107,6 +132,35 @@
     flex-direction: row;
     justify-content: space-between;
   }
+
+  .nutrition{
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: inherit auto;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .nutritional-info:first-of-type{
+    flex: 0 0 100%;
+  }
+  
+  .nutritional-info{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--navy);
+    flex: 0 0 50%;
+    box-sizing: border-box;
+    align-items: center;
+  }
+  
+  .nutrient{
+    display: flex;
+    flex-direction: column;
+  }
+  
+
   .instruction-paragraph{
     white-space: pre-wrap;
   }
