@@ -7,7 +7,7 @@
   background: var(--pink);
   border: 1px solid var(--pink);
   border-radius: 5px;
-  margin: 2rem auto;
+  margin: .5rem auto;
   box-shadow: 1px 1px 1px #959595;
   cursor: pointer;
   display: block;
@@ -35,8 +35,9 @@
 }
 
 .info{
-  padding-right: 1rem;
-  padding-top: 1rem;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
   font-variant: small-caps;
 }
 
@@ -92,12 +93,22 @@
 @media screen and (min-width: 600px){
   .btn-back{
     width: 40%;
-    margin: 1rem 1rem;
+    margin: .5rem;
   }
 
   .single-container{
     width: 90%;
-    margin: 0 auto;
+    margin: 0+ auto;
+  }
+
+  .info{
+    width: 100%;
+    padding: .5rem 0;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .instruction-paragraph{
+    white-space: pre-wrap;
   }
 }
 
@@ -116,7 +127,7 @@
 
   .btn-back{
     width: 30%;
-    margin-right: auto;
+    margin-left: auto;
   }
 }
 
@@ -149,7 +160,7 @@
   }
 
   .info{
-    flex: 0 0 50%;
+    flex: 0 0 45%;
   }
 
   .recipe-details{

@@ -1,4 +1,4 @@
-import React, {useEffect, Fragment} from 'react';
+import React, {useEffect} from 'react';
 import {useParams, useNavigate} from 'react-router-dom';
 import './SingleRecipe.css'
 
@@ -22,22 +22,37 @@ const SingleRecipe = ({getRecipe, recipe}) => {
         sourceName,
         readyInMinutes,
         servings,
-
+        analyzedInstructions,
+        nutrition
       } = recipe;
+     
+      console.log(recipe);
 
 
   return (
-    <Fragment>
-    <button className="btn-back" onClick={() => goBack('/recipes')}>Back to Search</button>
     <div className="single-container">
+      <button className="btn-back" onClick={() => goBack('/recipes')}>
+        Back to Search
+      </button>
       <div className="single-header">
         <div className="single-info">
             <h3 className="sr-title">{title}</h3>
             <p className="acknowledge">
               &copy; <a href={sourceUrl}>{sourceName}</a>
             </p>
-            <span className="info servings">Serves: {servings}</span>
-            <span className="info ready-time">Ready In: {readyInMinutes} minutes</span>
+            <div className="info">
+                <span className="servings">Serves: {servings}</span>
+                <span className="ready-time">Ready In: {readyInMinutes} minutes</span>
+            </div>
+            <div className="nutrition">
+            {nutrition && nutrition.nutrients.map(nutrient => (
+              <span className="nutritional-info">
+                <span className='nutrient-name'>{nutrient.name}</span>
+                <span className='nutrient-amount'>{nutrient.amount}</span>
+                <span className='nutrient-unit'>{nutrient.unit}</span>
+              </span>
+            ))}
+            </div>
           </div>
           <div className="single-img">
             <img src={image} alt={title}  className="sr-img" />
@@ -54,18 +69,17 @@ const SingleRecipe = ({getRecipe, recipe}) => {
           </div>
           <div className="instructions">
             <h4>Instructions</h4>
-            <p className="instruction-paragraph">       
-              {instructions && instructions
-              .replaceAll('<li>', '')
-              .replaceAll('</li>', '')
-              .replace('<ol>', '')
-              .replace('</ol>', '')
-              }
-            </p>
+            <ol>
+              { analyzedInstructions ?
+                analyzedInstructions && analyzedInstructions[0].steps.map(instruction => (
+                  <li key={instruction.number}>{instruction.step}</li>
+                )) :
+                <p>{instructions}</p>
+              } 
+              </ol>
           </div>
         </div>
     </div>
-    </Fragment>
   )
 }
 export default SingleRecipe;
