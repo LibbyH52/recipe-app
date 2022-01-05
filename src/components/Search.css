@@ -2,17 +2,17 @@
   box-sizing: border-box;
   display: flex;
   justify-content: center;
-  width: 90%;
+  width: 100%;
 }
 
 .form{
-  width: 90%;
-  margin: 0 auto;
+  width: 100%;
   padding: 1rem;
+  box-sizing: border-box;
 }
 
 .search{
-  width: 90%;
+  width: 100%;
   line-height: 1.5rem;
   border-radius: .5rem;
   padding: .5rem;
@@ -26,11 +26,40 @@
   border: 1px solid var(--pink);
   display: block;
   height: 2.5rem;
-  width: 90%;
+  width: 100%;
   margin: 1rem auto;
   border-radius: 8px;
   font-size: 1.25rem;
   color: var(--white);
+}
+
+@media screen and (min-width: 600px){
+  .search-container{
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 600px){
+  .search-container{
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1000px){
+  .search-container{
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .form{
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid var(--navy);
+    height: min-content;
+    border-radius: 1rem;
+  }
 }
 
 
