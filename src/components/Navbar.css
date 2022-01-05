@@ -59,9 +59,19 @@
     color: var(--navy);
   }
 
+  .main-heading a{
+    padding: 1rem;
+  }
+
   .main-heading a:hover{
     transform: scale(1.1);
     background: var(--white);
     color: var(--navy);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .navbar{
+    justify-content: space-around;
   }
 }
