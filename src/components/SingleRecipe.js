@@ -30,12 +30,12 @@ const SingleRecipe = ({getRecipe, recipe}) => {
       console.log(recipe);
 
   return (
-    <div className="single-container">
+    <div className="sr-container">
       <button className="btn-back" onClick={() => goBack('/recipes')}>
         Back to Search
       </button>
-      <div className="single-header">
-        <div className="single-info">
+      <div className="sr-header">
+        <div className="sr-info">
             <h3 className="sr-title">{title}</h3>
             <p className="acknowledge">
               &copy; <a href={sourceUrl}>{sourceName}</a>
@@ -45,26 +45,32 @@ const SingleRecipe = ({getRecipe, recipe}) => {
                 <span className="ready-time">Ready In: {readyInMinutes} minutes</span>
             </div>
             <div className="types-container">
-              <div className="type dish-type"> 
-                <div className="type-heading dishes">Dish Type: </div>
-                  {dishTypes && dishTypes.length > 0 ? dishTypes.map(dish =>(
-                      <div className="type">{dish}</div>
-                  )) : <div className="type">Info not available</div>}
+              <div className="type-content"> 
+                <div className="type-heading">Dish: </div>
+                  <div className="type-list">
+                    {dishTypes && dishTypes.length > 0 ? dishTypes.map(dish =>(
+                        <div className="type">{dish}</div>
+                    )) : <div className="type">Not available</div>}
+                  </div>
               </div>
-              <div className="type-heading cuisine-type"> 
-                <div className="cuisines">Cuisine: </div>
-                  {cuisines && cuisines.length >0 ? cuisines.map(cuisine =>(
-                      <div className="cuitype">{cuisine}</div>
-                  )) : <div className="type">Info not available</div>}
+              <div className="type-content"> 
+                <div className="type-heading">Cuisine: </div>
+                    <div className="type-list">
+                    {cuisines && cuisines.length >0 ? cuisines.map(cuisine =>(
+                        <div className="type">{cuisine}</div>
+                    )) : <div className="type">Not available</div>}
+                  </div>
               </div>
-              <div className="type-heading diet-type"> 
-                <div className="special-diets">Diets: </div>
-                  {diets && diets.length>0 ? diets.map(diet =>(
-                        <div className="type">{diet}</div>
-                  )) : <div className="type">Info not available</div>}
+              <div className="type-content"> 
+                <div className="type-heading">Diets: </div>
+                    <div className="type-list">
+                      {diets && diets.length>0 ? diets.map(diet =>(
+                            <div className="type">{diet}</div>
+                      )) : <div className="type">Not available</div>}
+                  </div>
               </div>
             </div>
-            <div className="nutrition">
+            <div className="sr-nutrition">
             {nutrition && nutrition.nutrients.map(nutrient => (
               <Fragment>
               {/*Selecting specific nutrients by name and mapping them to screen*/}
@@ -86,12 +92,12 @@ const SingleRecipe = ({getRecipe, recipe}) => {
             ))}
             </div>
           </div>
-          <div className="single-img">
+          <div className="img">
             <img src={image} alt={title}  className="sr-img" />
           </div>
       </div>
-      <div className="recipe-details">
-        <div className="ingredients">
+      <div className="sr-details">
+        <div className="sr-ingredients">
             <h4>Ingredients</h4>
             <ul>
               {extendedIngredients && extendedIngredients.map((ingredient, index) => (
@@ -99,7 +105,7 @@ const SingleRecipe = ({getRecipe, recipe}) => {
               ))}
             </ul> 
           </div>
-          <div className="instructions">
+          <div className="sr-instructions">
             <h4>Instructions</h4>
             <ol>
               { analyzedInstructions ?
