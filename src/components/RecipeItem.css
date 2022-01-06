@@ -65,6 +65,7 @@ a {
   flex-direction: column;
   justify-content: space-between;
   box-sizing: border-box;
+  align-items: center;
 }
 
 .recipe-title{
