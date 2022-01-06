@@ -14,17 +14,11 @@ function App() {
   const [recipe, setRecipe] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  let API_KEY;
-
-  if(process.env.NODE_ENV !== 'production') {
-    API_KEY = process.env.REACT_APP_API_KEY
-  } else {
-    API_KEY = process.env.API_KEY;
-  }
+  
 
   useEffect(() => {
     const fetchRecipes = async() => { 
-      const results = await axios.get(`https://api.spoonacular.com/recipes/random?apiKey=${API_KEY}&limitLicense=true&maxReadyTime=59&number=12&sortDirection='desc'`);
+      const results = await axios.get(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&limitLicense=true&maxReadyTime=59&number=12&sortDirection='desc'`);
       setRecipes(results.data.recipes);
       setIsLoading(false);
     }
@@ -33,7 +27,7 @@ function App() {
 
   const searchRecipes = (recipeName) => {
     const getRecipes = async() => {
-      const results = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&query=${recipeName}&limitLicence=true&maxReadyTime=59&number=12`)
+      const results = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${recipeName}&limitLicence=true&maxReadyTime=59&number=12`)
       setRecipes(results.data.results);
       setIsLoading(false);
     }
@@ -41,7 +35,7 @@ function App() {
   }
 
   const getRecipe = async (id) => {
-    const results = await axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}&includeNutrition=true`)
+    const results = await axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${process.env.REACT_APP_API_KEY}&includeNutrition=true`)
     setRecipe(results.data);
     setIsLoading(false);
     }
